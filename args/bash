@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+main(){
+  local arg
+  local argv=()
+  for arg; do
+    argv+=( "$arg" )
+  done
+
+  echo ${argv[*]}
+
+  for a in "${argv[@]}"; do
+    echo "$a"
+  done
+
+}
+
+# ex: args/bash aaa bbb "ccc dddd"
+main "$@"
+#    ^^^ if we loose quotes, args with whitespace explode
