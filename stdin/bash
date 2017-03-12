@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# ex cat stdin/sample | stdin/bash
+
+main(){
+  local line
+  while read line; do
+    echo "echo $line"
+  done
+}
+
+main "$@"

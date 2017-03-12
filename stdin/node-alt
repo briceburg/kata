@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+// ex cat stdin/sample | stdin/node 2>/dev/null
+
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('readable', function(){
+  var line = process.stdin.read();
+  if(line !== null){
+    console.log(line);
+  }
+});
+
+process.stdin.on('end',function(){
+  console.error('finished reading stdin');
+});
